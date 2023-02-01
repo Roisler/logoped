@@ -6,6 +6,8 @@ import Me from './components/Me';
 import About from './components/About';
 import AddEducation from './components/AddEducation';
 import Achievements from './components/Achievements';
+import Publications from './components/Publications';
+import Parents from './components/Parents';
 
 const App = () => (
   <Container fluid className="w-100">
@@ -14,6 +16,8 @@ const App = () => (
     <About />
     <AddEducation />
     <Achievements />
+    <Publications />
+    <Parents />
   </Container>
 );
 

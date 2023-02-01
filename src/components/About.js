@@ -10,7 +10,7 @@ import {
 const About = () => (
   <Row className="justify-content-center align-content-center h-100">
     <Col xs={12} md={12} xxl={6}>
-      <Card className="h-100 mt-5 text-center border-0">
+      <Card id="about" className="h-100 mt-5 text-center border-0">
         <Card.Body className="row">
           <Card.Text className="h1">Обо мне</Card.Text>
           <Card.Text className="mt-3">Я работаю учителем-логопедом в детском саду №27 Тополёк</Card.Text>
@@ -20,20 +20,20 @@ const About = () => (
           </Card.Text>
           <Card.Text>Общий педагогический стаж 4 года</Card.Text>
           <Tab.Container id="tabs-about-me" defaultActiveKey="education">
-            <Nav variant="tabs" role="tablist" className="justify-content-center">
-              <Nav.Item className="mx-4">
+            <Nav fill variant="tabs" role="tablist">
+              <Nav.Item>
                 <Nav.Link eventKey="education">
                   <img src="education.png" alt="Образование" />
                   <h5>Образование</h5>
                 </Nav.Link>
               </Nav.Item>
-              <Nav.Item className="mx-4">
+              <Nav.Item>
                 <Nav.Link eventKey="work">
                   <img src="education.png" alt="Работа" />
                   <h5>Работа</h5>
                 </Nav.Link>
               </Nav.Item>
-              <Nav.Item className="mx-4">
+              <Nav.Item>
                 <Nav.Link eventKey="qualify">
                   <img src="education.png" alt="Квалификация" />
                   <h5>Квалификация</h5>

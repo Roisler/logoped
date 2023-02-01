@@ -10,7 +10,7 @@ import {
 const Me = () => (
   <Row className="justify-content-center h-100">
     <Col xs={12} md={12} xxl={6}>
-      <Card className="h-100 text-left border-0 w-100" style={{ background: '#E0FFFF' }}>
+      <Card id="me" className="h-100 text-left border-0 w-100" style={{ background: '#E0FFFF' }}>
         <Card.Body className="row">
           <Col className="d-flex flex-column justify-content-center mx-5">
             <Card.Text className="h5">Сайт учителя-логопеда</Card.Text>

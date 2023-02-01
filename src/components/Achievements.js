@@ -1,29 +1,46 @@
-import React from 'react';
-import { Row, Col, Card } from 'react-bootstrap';
+import React, { useState } from 'react';
+import {
+  Row,
+  Col,
+  Card,
+  Carousel,
+  Image,
+  Button,
+} from 'react-bootstrap';
+import chunk from '../assets/chunk';
+import imagePaths from '../assets/imagePaths';
+import ModalImage from './ModalImage';
 
-const Achievements = () => (
-  <Row className="justify-content-center align-content-center">
-    <Col xs={12} md={12} xxl={6}>
-      <Card className="text-center border-0 w-100">
-        <Card.Body className="row">
-          <Col className="d-flex flex-column justify-content-center mx-5">
-            <Card.Text className="h6">Сертификаты и награды</Card.Text>
-            <Card.Text className="h1">Достижения</Card.Text>
-            <Card.Text className="h6">Сертификаты и награды</Card.Text>
-            <Card.Text className="h1">Достижения</Card.Text>
-            <Card.Text className="h6">Сертификаты и награды</Card.Text>
-            <Card.Text className="h1">Достижения</Card.Text>
-            <Card.Text className="h6">Сертификаты и награды</Card.Text>
-            <Card.Text className="h1">Достижения</Card.Text>
-            <Card.Text className="h6">Сертификаты и награды</Card.Text>
-            <Card.Text className="h1">Достижения</Card.Text>
-            <Card.Text className="h6">Сертификаты и награды</Card.Text>
-            <Card.Text className="h1">Достижения</Card.Text>
-          </Col>
-        </Card.Body>
-      </Card>
-    </Col>
-  </Row>
-);
+const imagePathChunks = chunk(imagePaths, 5);
+
+const Achievements = () => {
+  const [modalInfo, setModalInfo] = useState({ show: false, image: null });
+  return (
+    <>
+      <Row className="justify-content-center align-content-center">
+        <Col xs={12} md={12} xxl={6}>
+          <Card id="achievements" className="text-center border-0 w-100">
+            <Card.Body className="row">
+              <Card.Text className="h1 my-5">Сертификаты и награды</Card.Text>
+              <Carousel variant="dark">
+                {imagePathChunks.map((imagePathChunk, i) => (
+                  // eslint-disable-next-line react/no-array-index-key
+                  <Carousel.Item key={i} className="mb-5">
+                    {imagePathChunk.map((imagePath) => (
+                      <Button key={imagePath.id} variant="light" onClick={() => setModalInfo({ show: true, image: imagePath.path })}>
+                        <Image className="mx-1" src={imagePath.path} style={{ maxWidth: 200 }} loading="lazy" />
+                      </Button>
+                    ))}
+                  </Carousel.Item>
+                ))}
+              </Carousel>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+      <ModalImage modalInfo={modalInfo} onHide={() => setModalInfo({ show: false, image: null })} />
+    </>
+  );
+};
 
 export default Achievements;
