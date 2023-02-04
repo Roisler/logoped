@@ -10,7 +10,7 @@ import Publications from './components/Publications';
 import Parents from './components/Parents';
 
 const App = () => (
-  <Container fluid className="w-100">
+  <Container fluid className="w-100" style={{ padding: 1 }}>
     <Navigation />
     <Me />
     <About />

@@ -23,11 +23,11 @@ const programCards = programChunks.map((programChunk, i) => (
         result,
       }) => (
         <Card key={id} className="border-0">
-          <Card.Body style={{ background: '#E0FFFF' }}>
+          <Card.Body className="theme">
             <Card.Img src="yes2.svg" alt={description} style={{ height: 64, width: 64 }} />
             <Card.Text className="mt-3">{`${description} - ${hours} ${hours > 4 ? 'часов' : 'часа'}`}</Card.Text>
           </Card.Body>
-          <Card.Footer className="border-0" style={{ background: '#E0FFFF' }}>{`${year}г. ${result}.`}</Card.Footer>
+          <Card.Footer className="border-0 theme">{`${year}г. ${result}.`}</Card.Footer>
         </Card>
       ))}
     </CardGroup>
@@ -35,9 +35,9 @@ const programCards = programChunks.map((programChunk, i) => (
 ));
 
 const AddEducation = () => (
-  <Row className="justify-content-center align-content-center">
-    <Col xs={12} md={12} xxl={6}>
-      <Card id="addEducation" className="mt-5 text-center border-0" style={{ background: '#E0FFFF', minHeight: 550 }}>
+  <Row className="justify-content-center align-content-center m-0">
+    <Col xs={12} md={12} xxl={6} className="p-0">
+      <Card id="addEducation" className="mt-5 text-center border-0" style={{ minHeight: 550 }}>
         <Card.Body className="row">
           <Card.Text className="h1 my-3">Дополнительное образование</Card.Text>
           <Carousel variant="dark">

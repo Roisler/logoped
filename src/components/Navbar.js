@@ -2,10 +2,15 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 
 const Navigation = () => (
-  <Navbar expand="lg" className="m-0" style={{ background: '#E0FFFF' }}>
+  <Navbar expand="lg" className="m-0 theme">
     <Container fluid>
-      <Navbar.Brand href="#"><h2>Бондарчук Дарья</h2></Navbar.Brand>
-      <Navbar.Collapse>
+      <Navbar.Brand href="#">
+        <h2>
+          <img src="book.svg" alt="Логотип" style={{ height: 50, width: 50 }} />
+        </h2>
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="menu" />
+      <Navbar.Collapse id="menu">
         <Nav className="justify-content-center w-100 mx-auto">
           <Nav.Link href="#about"><h5>Обо мне</h5></Nav.Link>
           <Nav.Link href="#addEducation"><h5>Образование</h5></Nav.Link>

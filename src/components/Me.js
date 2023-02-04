@@ -8,9 +8,9 @@ import {
 } from 'react-bootstrap';
 
 const Me = () => (
-  <Row className="justify-content-center h-100">
-    <Col xs={12} md={12} xxl={6}>
-      <Card id="me" className="h-100 text-left border-0 w-100" style={{ background: '#E0FFFF' }}>
+  <Row className="justify-content-center h-100 m-0">
+    <Col xs={12} md={12} xxl={6} className="p-0">
+      <Card id="me" className="h-100 text-left border-0 w-100">
         <Card.Body className="row">
           <Col className="d-flex flex-column justify-content-center mx-5">
             <Card.Text className="h5">Сайт учителя-логопеда</Card.Text>

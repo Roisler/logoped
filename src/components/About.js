@@ -8,8 +8,8 @@ import {
 } from 'react-bootstrap';
 
 const About = () => (
-  <Row className="justify-content-center align-content-center h-100">
-    <Col xs={12} md={12} xxl={6}>
+  <Row className="justify-content-center align-content-center h-100 m-0">
+    <Col xs={12} md={12} xxl={6} className="p-0">
       <Card id="about" className="h-100 mt-5 text-center border-0">
         <Card.Body className="row">
           <Card.Text className="h1">Обо мне</Card.Text>

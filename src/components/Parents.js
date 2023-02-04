@@ -13,7 +13,7 @@ const generateParents = parentsChunks.map((parentChunk, i) => (
   // eslint-disable-next-line react/no-array-index-key
   <Row key={i} xs={1} md={2}>
     {parentChunk.map((parent) => (
-      <Card key={parent.id} className="border-0 mx-auto p-0">
+      <Card key={parent.id} className="border-0 mx-auto mt-4 p-0">
         <Card.Body>
           <a href={parent.path} target="_blank" rel="noreferrer">
             <Card.Img src="pdf.svg" style={{ maxWidth: 64 }} />
@@ -26,8 +26,8 @@ const generateParents = parentsChunks.map((parentChunk, i) => (
 ));
 
 const Parents = () => (
-  <Row className="justify-content-center align-content-center">
-    <Col xs={12} md={12} xxl={6}>
+  <Row className="justify-content-center align-content-center m-0">
+    <Col xs={12} md={12} xxl={6} className="p-0">
       <Card id="parents" className="mt-2 text-center border-0">
         <Card.Body className="row">
           <Card.Text className="h1 my-3">Родителям</Card.Text>
