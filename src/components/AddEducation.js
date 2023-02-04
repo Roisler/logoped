@@ -40,7 +40,7 @@ const AddEducation = () => (
       <Card id="addEducation" className="mt-5 text-center border-0">
         <Card.Body className="row">
           <Card.Text className="h1 my-3">Дополнительное образование</Card.Text>
-          <Carousel variant="dark">
+          <Carousel variant="dark" data-bs-interval="false">
             {programCards}
           </Carousel>
         </Card.Body>
