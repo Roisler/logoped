@@ -9,7 +9,7 @@ const ModalImage = ({ modalInfo, onHide }) => (
     aria-labelledby="contained-modal-title-vcenter"
     centered
   >
-    <Modal.Header closeButton className="border-0" />
+    <Modal.Header closeButton className="border-0" style={{ display: 'none' }} />
     <Modal.Body className="p-0">
       <Image src={modalInfo.image} alt="Изображение" className="w-100 mx-auto d-block" />
     </Modal.Body>

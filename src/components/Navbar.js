@@ -12,10 +12,10 @@ const Navigation = () => (
       <Navbar.Toggle aria-controls="menu" />
       <Navbar.Collapse id="menu">
         <Nav className="justify-content-center w-100 mx-auto">
-          <Nav.Link href="#about"><h5>Обо мне</h5></Nav.Link>
-          <Nav.Link href="#addEducation"><h5>Образование</h5></Nav.Link>
-          <Nav.Link href="#achievements"><h5>Достижения</h5></Nav.Link>
-          <Nav.Link href="#publications"><h5>Публикации</h5></Nav.Link>
+          <Nav.Link href="#me" data-bs-toggle="collapse"><h5>Обо мне</h5></Nav.Link>
+          <Nav.Link href="#addEducation" data-bs-toggle="collapse"><h5>Образование</h5></Nav.Link>
+          <Nav.Link href="#achievements" data-bs-toggle="collapse"><h5>Достижения</h5></Nav.Link>
+          <Nav.Link href="#publications" data-bs-toggle="collapse"><h5>Публикации</h5></Nav.Link>
           <Nav.Link href="#parents"><h5>Родителям</h5></Nav.Link>
         </Nav>
       </Navbar.Collapse>

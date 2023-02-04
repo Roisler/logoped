@@ -5,33 +5,19 @@ import {
   Card,
 } from 'react-bootstrap';
 import publications from '../assets/publications';
-import chunk from '../assets/chunk';
+import generateCards from '../assets/generateCards';
 
-const parentsChunks = chunk(publications, 6);
-
-const generateParents = parentsChunks.map((parentChunk, i) => (
-  // eslint-disable-next-line react/no-array-index-key
-  <Row key={i} xs={1} md={2}>
-    {parentChunk.map((parent) => (
-      <Card key={parent.id} className="border-0 mx-auto mt-4 p-0">
-        <Card.Body>
-          <a href={parent.path} target="_blank" rel="noreferrer">
-            <Card.Img src="pdf.svg" style={{ maxWidth: 64 }} />
-          </a>
-          <Card.Text className="mt-3">{parent.description}</Card.Text>
-        </Card.Body>
-      </Card>
-    ))}
-  </Row>
-));
+const parentsFileListCards = generateCards(publications, 'theme');
 
 const Parents = () => (
-  <Row className="justify-content-center align-content-center m-0">
+  <Row className="m-0">
     <Col xs={12} md={12} xxl={6} className="p-0">
       <Card id="parents" className="mt-2 text-center border-0">
         <Card.Body className="row">
-          <Card.Text className="h1 my-3">Родителям</Card.Text>
-          {generateParents}
+          <Card.Text className="h1 my-5">Родителям</Card.Text>
+          <Row xs={2} sm={3} md={4}>
+            {parentsFileListCards}
+          </Row>
         </Card.Body>
       </Card>
     </Col>

@@ -26,13 +26,13 @@ const publications = [
   },
   {
     id: 6,
-    path: 'publications/sistema.pdf',
-    description: 'Система коррекционных мероприятий с дошкольниками по развитию монолога, ориентированных на игры со строительным материалом',
+    path: 'publications/transport.pdf',
+    description: 'Технологическая карта по теме: «Транспорт»',
   },
   {
     id: 7,
-    path: 'publications/transport.pdf',
-    description: 'Технологическая карта по теме: «Транспорт»',
+    path: 'publications/sistema.pdf',
+    description: 'Система коррекционных мероприятий с дошкольниками по развитию монолога, ориентированных на игры со строительным материалом',
   },
 ];
 

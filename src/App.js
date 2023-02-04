@@ -3,7 +3,6 @@ import { Container } from 'react-bootstrap';
 import './App.css';
 import Navigation from './components/Navbar';
 import Me from './components/Me';
-import About from './components/About';
 import AddEducation from './components/AddEducation';
 import Achievements from './components/Achievements';
 import Publications from './components/Publications';
@@ -13,7 +12,6 @@ const App = () => (
   <Container fluid className="w-100" style={{ padding: 1 }}>
     <Navigation />
     <Me />
-    <About />
     <AddEducation />
     <Achievements />
     <Publications />
