@@ -9,7 +9,7 @@ import {
 import { useForm, ValidationError } from '@formspree/react';
 import { useTranslation } from 'react-i18next';
 
-const keyForFormSpree = 'xnqyjyer';
+const keyForFormSpree = process.env.REACT_APP_ACCESS_FORMSPREE_TOKEN;
 
 const ContactForm = () => {
   const { t } = useTranslation();
