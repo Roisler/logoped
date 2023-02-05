@@ -19,7 +19,7 @@ const Navigation = () => {
           <Nav className="justify-content-center w-100 mx-auto">
             <Nav.Link href="#me" data-bs-toggle="collapse"><h5>{t('basic.about_me')}</h5></Nav.Link>
             {items.map((item) => (
-              <Nav.Link href={`#${item}`} data-bs-toggle="collapse"><h5>{t(`${item}.${item}`)}</h5></Nav.Link>
+              <Nav.Link key={item} href={`#${item}`} data-bs-toggle="collapse"><h5>{t(`${item}.${item}`)}</h5></Nav.Link>
             ))}
           </Nav>
         </Navbar.Collapse>

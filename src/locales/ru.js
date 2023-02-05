@@ -8,6 +8,8 @@ export default {
       send: 'Отправить',
       about_me: 'Обо мне',
       logo: 'Логотип сайта',
+      city: 'Осинники',
+      personal_site: 'Персональный сайт учителя-логопеда Дарьи Бондарчук',
     },
     education: {
       education: 'Образование',

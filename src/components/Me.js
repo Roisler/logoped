@@ -24,7 +24,7 @@ const Me = () => {
                 <Card.Text className="h5 mt-3">{t('basic.site')}</Card.Text>
                 <Card.Text className="h1 mb-5">{t('basic.name_surname')}</Card.Text>
                 {items.map((item) => (
-                  <Card.Text>
+                  <Card.Text key={item}>
                     <span>
                       <b>{`${t(`${item}.${item}`)}:`}</b>
                     </span>

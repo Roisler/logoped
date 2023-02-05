@@ -7,6 +7,7 @@ import AddEducation from './components/AddEducation';
 import Achievements from './components/Achievements';
 import Publications from './components/Publications';
 import Parents from './components/Parents';
+import Footer from './components/Footer';
 
 const App = () => (
   <Container fluid className="w-100" style={{ padding: 1 }}>
@@ -16,6 +17,7 @@ const App = () => (
     <Achievements />
     <Publications />
     <Parents />
+    <Footer />
   </Container>
 );
 
