@@ -44,7 +44,7 @@ const AddEducation = () => {
   return (
     <Row className="justify-content-center align-content-center m-0">
       <Col xs={12} md={12} xxl={6} className="p-0">
-        <Card id="addEducation" className="mt-5 text-center border-0">
+        <Card id="education" className="mt-5 text-center border-0">
           <Card.Body className="row">
             <Card.Text className="h1 my-3">{t('education.add_education')}</Card.Text>
             <ProgramCards t={t} />
