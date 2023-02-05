@@ -7,6 +7,7 @@ import {
   Image,
   Button,
 } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 import chunk from '../assets/chunk';
 import imagePaths from '../assets/imagePaths';
 import ModalImage from './ModalImage';
@@ -14,6 +15,7 @@ import ModalImage from './ModalImage';
 const imagePathChunks = chunk(imagePaths, 5);
 
 const Achievements = () => {
+  const { t } = useTranslation();
   const [modalInfo, setModalInfo] = useState({ show: false, image: null });
   return (
     <>
@@ -21,7 +23,7 @@ const Achievements = () => {
         <Col xs={12} md={12} xxl={6} className="p-0">
           <Card id="achievements" className="text-center border-0 w-100">
             <Card.Body className="row">
-              <Card.Text className="h1 my-5">Сертификаты и награды</Card.Text>
+              <Card.Text className="h1 my-5">{t('achievements.sertificats_awards')}</Card.Text>
               <Carousel variant="dark" data-bs-interval="false">
                 {imagePathChunks.map((imagePathChunk, i) => (
                   // eslint-disable-next-line react/no-array-index-key

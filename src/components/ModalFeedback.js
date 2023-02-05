@@ -7,68 +7,40 @@ import {
   Modal,
 } from 'react-bootstrap';
 import { useForm, ValidationError } from '@formspree/react';
+import { useTranslation } from 'react-i18next';
 
-const keyForFormSpree = process.env.REACT_APP_ACCESS_FORMSPREE_TOKEN;
+const keyForFormSpree = 'xnqyjyer';
 
 const ContactForm = () => {
+  const { t } = useTranslation();
   const [state, handleSubmit] = useForm(keyForFormSpree);
+  const fields = ['name', 'email', 'message'];
+
   if (state.succeeded) {
-    return <p>Сообщение успешно отправлено! Я отвечу на него в ближайшее время</p>;
+    return <p>{t('feedback.send_successed')}</p>;
   }
   return (
     <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-4">
-        <Form.Label htmlFor="name">
-          Ваше имя
-        </Form.Label>
-        <Form.Control
-          id="name"
-          type="text"
-          name="name"
-          placeholder="Введите имя"
-          required
-        />
-        <ValidationError
-          prefix="Name"
-          field="name"
-          errors={state.errors}
-        />
-      </Form.Group>
-      <Form.Group className="mb-4">
-        <Form.Label htmlFor="email">
-          Ваш Email
-        </Form.Label>
-        <Form.Control
-          id="email"
-          type="email"
-          name="email"
-          placeholder="Введите Email"
-          required
-        />
-        <ValidationError
-          prefix="Email"
-          field="email"
-          errors={state.errors}
-        />
-      </Form.Group>
-      <Form.Group className="mb-4">
-        <Form.Label htmlFor="message">
-          Сообщение
-        </Form.Label>
-        <Form.Control
-          as="textarea"
-          row={5}
-          id="message"
-          name="message"
-          placeholder="Введите сообщение"
-          required
-        />
-        <ValidationError
-          prefix="Message"
-          field="message"
-          errors={state.errors}
-        />
-      </Form.Group>
+      {fields.map((field) => (
+        <Form.Group key={field} className="mb-4">
+          <Form.Label htmlFor={field}>
+            {t(`feedback.${field}`)}
+          </Form.Label>
+          <Form.Control
+            as={field === 'message' ? 'textarea' : 'input'}
+            id={field}
+            type={field === 'email' ? 'email' : 'text'}
+            name={field}
+            placeholder={t(`feedback.${field}_placeholder`)}
+            required
+          />
+          <ValidationError
+            prefix={field}
+            field={field}
+            errors={state.errors}
+          />
+        </Form.Group>
+      ))}
       <Button variant="outline-success" type="submit" disabled={state.submitting}>
         {state.submitting && (
           <Spinner
@@ -77,29 +49,33 @@ const ContactForm = () => {
             size="sm"
             role="status"
             aria-hidden="true"
+            className="mx-1"
           />
         )}
-        Отправить
+        {t('basic.send')}
       </Button>
     </Form>
   );
 };
 
-const ModalFeedback = ({ show, onHide }) => (
-  <Modal
-    size="lg"
-    show={show}
-    onHide={onHide}
-    aria-labelledby="contained-modal-title-vcenter"
-    centered
-  >
-    <Modal.Header closeButton>
-      Напишите мне!
-    </Modal.Header>
-    <Modal.Body>
-      <ContactForm />
-    </Modal.Body>
-  </Modal>
-);
+const ModalFeedback = ({ show, onHide }) => {
+  const { t } = useTranslation();
+  return (
+    <Modal
+      size="lg"
+      show={show}
+      onHide={onHide}
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        {t('basic.write')}
+      </Modal.Header>
+      <Modal.Body>
+        <ContactForm />
+      </Modal.Body>
+    </Modal>
+  );
+};
 
 export default ModalFeedback;
