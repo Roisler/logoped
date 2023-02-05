@@ -11,7 +11,7 @@ const ModalImage = ({ modalInfo, onHide }) => (
   >
     <Modal.Header closeButton className="border-0" style={{ display: 'none' }} />
     <Modal.Body className="p-0">
-      <Image src={modalInfo.image} alt="Изображение" className="w-100 mx-auto d-block" />
+      <Image src={modalInfo.image} alt="Изображение" className="w-100 mx-auto d-block" loading="lazy" />
     </Modal.Body>
   </Modal>
 );

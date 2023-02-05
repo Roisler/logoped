@@ -40,7 +40,7 @@ const Me = () => {
                 <Image src="Darya.jpg" className="w-75 ml-5 mt-5 mb-3 d-none d-md-block" alt={t('basic.name_surname')} />
               </Col>
             </Card.Body>
-            <Card.Img src="Darya.jpg" className="w-100 ml-5 mt-5 mb-3 d-md-none" alt={t('basic.name_surname')} />
+            <Card.Img src="Darya.jpg" className="w-100 ml-5 mt-5 mb-3 d-md-none" alt={t('basic.name_surname')} loading="lazy" />
           </Card>
         </Col>
       </Row>
