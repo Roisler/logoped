@@ -1,58 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  Col,
   Row,
+  Col,
   Card,
   Carousel,
-  CardGroup,
+  Image,
+  Button,
 } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
-import programs from '../assets/educationPrograms';
-import chunk from '../assets/chunk';
+import chunk from '../utilities/chunk';
+import state from '../assets/state';
+import ModalCarousel from './ModalCarousel';
+import EducationList from './AddEducationsList';
 
-const programChunks = chunk(programs, 3);
+const { education } = state;
+const addEducationsChunk = chunk(education, 4);
 
-const ProgramCards = ({ t }) => (
-  <Carousel variant="dark" data-bs-interval="false">
-    {programChunks.map((programChunk, i) => (
-      // eslint-disable-next-line react/no-array-index-key
-      <Carousel.Item key={i} className="mb-5">
-        <CardGroup>
-          {programChunk.map(({
-            description,
-            hours,
-            year,
-            id,
-            result,
-          }) => (
-            <Card key={id} className="border-0">
-              <Card.Body>
-                <Card.Img src="yes2.svg" alt={description} style={{ height: 64, width: 64 }} />
-                <Card.Text className="mt-3">{`${description} - ${t('hour.hourWithCount', { count: hours })}`}</Card.Text>
-              </Card.Body>
-              <Card.Footer className="border-0">{`${year}г. ${result}.`}</Card.Footer>
-            </Card>
-          ))}
-        </CardGroup>
-      </Carousel.Item>
-    ))}
-  </Carousel>
-);
-
-const AddEducation = () => {
+const Achievements = () => {
   const { t } = useTranslation();
+  const [modalInfo, setModalInfo] = useState({ show: false, state: null, id: 0 });
   return (
-    <Row className="justify-content-center align-content-center m-0">
-      <Col xs={12} md={12} xxl={6} className="p-0">
-        <Card id="education" className="mt-5 text-center border-0">
-          <Card.Body className="row">
-            <Card.Text className="h1 my-3">{t('education.add_education')}</Card.Text>
-            <ProgramCards t={t} />
-          </Card.Body>
-        </Card>
-      </Col>
-    </Row>
+    <>
+      <Row className="justify-content-center align-content-center m-0">
+        <Col xs={12} md={12} xxl={6} className="p-0">
+          <Card id="education" className="text-center border-0 w-100">
+            <Card.Body className="row">
+              <Card.Text className="h1 my-5">{t('education.add_education')}</Card.Text>
+              <Carousel variant="dark" interval={null}>
+                {addEducationsChunk.map((imagePathChunk, i) => (
+                  // eslint-disable-next-line react/no-array-index-key
+                  <Carousel.Item key={i} className="mb-5">
+                    <Row xs={1} sm={2} md={5} className="mx-5 justify-content-center align-content-center">
+                      {imagePathChunk.map((imagePath) => (
+                        <Col key={imagePath.id}>
+                          <Button className="p-0" variant="light" onClick={() => setModalInfo({ show: true, state: 'education', id: imagePath.id })}>
+                            <Image fluid src={imagePath.path} style={{ maxHeight: 160 }} loading="lazy" />
+                          </Button>
+                        </Col>
+                      ))}
+                    </Row>
+                  </Carousel.Item>
+                ))}
+              </Carousel>
+            </Card.Body>
+          </Card>
+        </Col>
+        <EducationList />
+      </Row>
+      <ModalCarousel
+        modalInfo={modalInfo}
+        onHide={() => setModalInfo({ show: false, id: 0 })}
+      />
+    </>
   );
 };
 
-export default AddEducation;
+export default Achievements;

@@ -8,7 +8,7 @@ const Navigation = () => {
 
   return (
     <Navbar expand="lg" className="m-0 theme">
-      <Container fluid>
+      <Container fluid className="shadow-sm">
         <Navbar.Brand href="#">
           <h2>
             <img src="book.svg" alt={t('basic.logo')} style={{ height: 50, width: 50 }} />

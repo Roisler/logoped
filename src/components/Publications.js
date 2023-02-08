@@ -1,7 +1,9 @@
 import React from 'react';
 import Wrapper from './Wrapper';
-import publications from '../assets/publications';
-import generateCards from '../assets/generateCards';
+import state from '../assets/state';
+import generateCards from '../utilities/generateCards';
+
+const { publications } = state;
 
 const publicationsFileListCards = generateCards(publications);
 

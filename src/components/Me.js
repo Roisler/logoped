@@ -6,7 +6,7 @@ import {
   Row,
   Image,
 } from 'react-bootstrap';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 import ModalFeedback from './ModalFeedback';
 
 const Me = () => {
@@ -18,7 +18,7 @@ const Me = () => {
     <>
       <Row className="m-0">
         <Col className="p-0">
-          <Card id="me" className="h-100 border-0 w-100 text-right">
+          <Card id="me" className="h-100 border-0 w-100 text-right rounded-0">
             <Card.Body className="row row-cols-1 row-cols-md-2">
               <Col className="d-flex flex-column text-justify">
                 <Card.Text className="h5 mt-3">{t('basic.site')}</Card.Text>
@@ -30,11 +30,11 @@ const Me = () => {
                     </span>
                     <br />
                     <span>
-                      {t(`${item}.description`)}
+                      <Trans>{t(`${item}.description`)}</Trans>
                     </span>
                   </Card.Text>
                 ))}
-                <Button variant="outline-success" className="w-10 mb-3" onClick={() => setShow(true)}>{t('feedback.feedback')}</Button>
+                <Button variant="outline-success" className="w-10 mb-3 shadow" onClick={() => setShow(true)}>{t('feedback.feedback')}</Button>
               </Col>
               <Col className="d-flex align-items-center justify-content-center">
                 <Image src="Darya.jpg" className="w-75 ml-5 mt-5 mb-3 d-none d-md-block" alt={t('basic.name_surname')} />

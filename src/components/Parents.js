@@ -1,9 +1,11 @@
 import React from 'react';
 import Wrapper from './Wrapper';
-import publications from '../assets/publications';
-import generateCards from '../assets/generateCards';
+import state from '../assets/state';
+import generateCards from '../utilities/generateCards';
 
-const parentsFileListCards = generateCards(publications, 'theme');
+const { parents } = state;
+
+const parentsFileListCards = generateCards(parents, 'theme');
 
 const Parents = () => (
   <Wrapper id="parents">

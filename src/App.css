@@ -12,8 +12,8 @@
 .theme {
   background: #d9eaed;
 }
-.navbar .navbar-toggler{
-  z-index:1000
+.modal-fullscreen > .modal-content {
+  background: #99999962
 }
 
 #me {
