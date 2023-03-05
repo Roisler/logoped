@@ -9,14 +9,13 @@ import {
 } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import chunk from '../utilities/chunk';
-import state from '../assets/state';
+import state from '../state/index';
 import ModalCarousel from './ModalCarousel';
 import EducationList from './AddEducationsList';
 
-const { education } = state;
-const addEducationsChunk = chunk(education, 4);
-
 const Achievements = () => {
+  const { education } = state;
+  const addEducationsChunk = chunk(education, 4);
   const { t } = useTranslation();
   const [modalInfo, setModalInfo] = useState({ show: false, state: null, id: 0 });
   return (

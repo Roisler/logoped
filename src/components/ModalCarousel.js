@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Modal, Carousel, Image } from 'react-bootstrap';
-import state from '../assets/state';
+import state from '../state/index';
 
 const ModalCarousel = ({ modalInfo, onHide }) => {
   const [index, setIndex] = useState(modalInfo.id - 1);

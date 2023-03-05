@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Button, Collapse } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
-import state from '../assets/state';
-
-const { education } = state;
+import state from '../state/index';
 
 const EducationList = () => {
+  const { education } = state;
   const [open, setOpen] = useState(false);
   const { t } = useTranslation();
   return (

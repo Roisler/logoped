@@ -1,6 +1,6 @@
 import React from 'react';
 import Wrapper from './Wrapper';
-import state from '../assets/state';
+import state from '../state/index';
 import generateCards from '../utilities/generateCards';
 
 const { publications } = state;
